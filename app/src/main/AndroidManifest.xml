@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_App">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".FoundBeers"
+            android:label="@string/title_activity_found_beers"
+            android:theme="@style/Theme.Android_App.NoActionBar"></activity>
+        <activity android:name=".MainActivity"
+            android:label="@string/title_activity_found_beers"
+            android:theme="@style/Theme.Android_App.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
