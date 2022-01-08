@@ -4,4 +4,14 @@
     <string name="search_for_a_beer">Zoek naar een bier</string>
     <string name="title_activity_search_beers">Zoek Bieren</string>
     <string name="title_activity_found_beers">Gevonden Bieren</string>
+    <string name="search_beer">Zoek Bier</string>
+    <string name="profile">Profiel</string>
+    <string name="title_activity_profile">Profiel</string>
+    <string name="progress_message">Zoeken naar het bier</string>
+    <string name="beerName">default naam</string>
+    <string name="beer_tagline">default tagline</string>
+    <string name="beerdescription">Bier Beschrijving</string>
+    <string name="title_beer_detail">Bier Informatie</string>
+    <string name="description_detail">Beschrijving</string>
+    <string name="i_drank_this">Ik heb dit gedroken</string>
 </resources>

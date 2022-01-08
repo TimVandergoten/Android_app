@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.timvandergoten.beercollect">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeerCollect">
         <activity
+            android:name=".DetailBeerActivity"
+            android:label="@string/title_beer_detail"
+            android:theme="@style/Theme.BeerCollect.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_profile"
+            android:theme="@style/Theme.BeerCollect.NoActionBar" />
+        <activity
             android:name=".FoundBeerActivity"
             android:label="@string/title_activity_found_beers"
-            android:theme="@style/Theme.BeerCollect.NoActionBar"/>
+            android:theme="@style/Theme.BeerCollect.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_search_beers"

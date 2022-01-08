@@ -3,4 +3,14 @@
     <string name="search_for_a_beer">Search for a beer</string>
     <string name="title_activity_search_beers">Search Beers</string>
     <string name="title_activity_found_beers">Found Beers</string>
+    <string name="search_beer">Search Beer</string>
+    <string name="profile">Profile</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="progress_message">Searching for beer</string>
+    <string name="beerName">default name</string>
+    <string name="beer_tagline">default tagline</string>
+    <string name="beerdescription">Beer Description</string>
+    <string name="title_beer_detail">Beer Information</string>
+    <string name="description_detail">Description</string>
+    <string name="i_drank_this">I drank this</string>
 </resources>
