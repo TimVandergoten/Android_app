@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.timVandergoten.android">
+    package="com.timvandergoten.beercollect">
 
     <application
         android:allowBackup="true"
@@ -8,14 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Android_App">
+        android:theme="@style/Theme.BeerCollect">
         <activity
-            android:name=".FoundBeers"
+            android:name=".FoundBeerActivity"
             android:label="@string/title_activity_found_beers"
-            android:theme="@style/Theme.Android_App.NoActionBar"></activity>
-        <activity android:name=".MainActivity"
-            android:label="@string/title_activity_found_beers"
-            android:theme="@style/Theme.Android_App.NoActionBar">
+            android:theme="@style/Theme.BeerCollect.NoActionBar"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_search_beers"
+            android:theme="@style/Theme.BeerCollect.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
