@@ -13,4 +13,17 @@
     <string name="title_beer_detail">Beer Information</string>
     <string name="description_detail">Description</string>
     <string name="i_drank_this">I drank this</string>
+    <string name="succes">Beer added to your collection</string>
+    <string name="failed">Beer has failed to be added</string>
+    <string name="addBeer">add</string>
+    <string name="comment_detail">Comment</string>
+    <string name="image_of_beer">Image of beer</string>
+    <string name="failedBeerGet">Failed to get beers from database</string>
+    <string name="allready">"Allready in your collection "</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragtitleList">List of liked beers</string>
+    <string name="fragTitleDetail">Liked beer detail</string>
+    <string name="your_beer_list">Your beer list</string>
+    <string name="back">back</string>
 </resources>

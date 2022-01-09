@@ -15,29 +15,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.timvandergoten.beercollect.DetailBeerActivity;
-import com.timvandergoten.beercollect.Models.Beer;
+import com.timvandergoten.beercollect.Models.LikedBeer;
 import com.timvandergoten.beercollect.R;
 
 import java.util.ArrayList;
 
-public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerViewHolder> {
-    private ArrayList<Beer> listBeers = new ArrayList<>();
+public class LikedBeersAdapter extends RecyclerView.Adapter<LikedBeersAdapter.LikedBeerViewHolder> {
+    private ArrayList<LikedBeer> listBeers = new ArrayList<>();
     private Context myContext;
 
-    public BeersAdapter(Context context, ArrayList<Beer> beers) {
+    public LikedBeersAdapter(Context context, ArrayList<LikedBeer> beers) {
         myContext = context;
         listBeers = beers;
     }
 
     @NonNull
     @Override
-    public BeerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public LikedBeersAdapter.LikedBeerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.beer_item_list_layout, parent, false);
-        return new BeerViewHolder(view);
+        return new LikedBeersAdapter.LikedBeerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(BeerViewHolder holder, int position) {
+    public void onBindViewHolder(LikedBeersAdapter.LikedBeerViewHolder holder, int position) {
         holder.bindBeers(listBeers.get(position),position);
     }
 
@@ -46,7 +46,7 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerViewHold
         return listBeers.size();
     }
 
-    public class BeerViewHolder extends RecyclerView.ViewHolder{
+    public class LikedBeerViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
         TextView beerName;
@@ -54,7 +54,7 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerViewHold
         TextView desc;
         LinearLayout ListItem;
 
-        public BeerViewHolder(View itemView) {
+        public LikedBeerViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.beerImageView);
@@ -65,7 +65,7 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerViewHold
         }
 
 
-        public void bindBeers(Beer beer, int position) {
+        public void bindBeers(LikedBeer beer, int position) {
             Picasso.get().load(beer.getImageUrl()).into(imageView); //put this in detail activity
             beerName.setText(beer.getName());
             tagLine.setText(beer.getTagline());
@@ -73,7 +73,7 @@ public class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerViewHold
             ListItem.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    //TODO:change for fragments
                     Intent intent = new Intent(myContext, DetailBeerActivity.class);
                     intent.putExtra(DetailBeerActivity.ClICKEDBEER,listBeers.get(position));
                     myContext.startActivity(intent);

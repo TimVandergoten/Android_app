@@ -14,8 +14,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 import com.timvandergoten.beercollect.Adapters.BeersAdapter;
 import com.timvandergoten.beercollect.Models.Beer;
@@ -32,11 +30,10 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-
-public class FoundBeerActivity extends AppCompatActivity {
+//TODO:make listitem clickable
+public class FoundBeerActivity extends AppCompatActivity{
     public static final String BEER = "beerName";
     Toolbar toolbar;
-    TextView textView;
     ArrayList<Beer> foundBeers;
     Handler FoundBeerHandler = new Handler();
     ProgressDialog progressDialog;
@@ -58,8 +55,8 @@ public class FoundBeerActivity extends AppCompatActivity {
         foundBeers = new ArrayList<>();
         beerArrayAdapter = new BeersAdapter(this,foundBeers);
         RecyclerView recyclerView = findViewById(R.id.foundBierList);
-        recyclerView.setAdapter(beerArrayAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(FoundBeerActivity.this));
+        recyclerView.setAdapter(beerArrayAdapter);
     }
 
     @Override
@@ -83,6 +80,7 @@ public class FoundBeerActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
     class fetchData extends Thread{
         String data ="";
         String beerName;
@@ -119,7 +117,7 @@ public class FoundBeerActivity extends AppCompatActivity {
                     JSONArray beers = new JSONArray(data);
                     for (int i = 0;i<beers.length();i++){
                         JSONObject object = beers.getJSONObject(i);
-                        Beer beer = new Beer(object.getString("name"),object.getString("tagline"),object.getString("first_brewed"),object.getString("description"),object.getString("image_url"));
+                        Beer beer = new Beer(object.getInt("id") ,object.getString("name"),object.getString("tagline"),object.getString("description"),object.getString("image_url"));
                         foundBeers.add(beer);
                     }
 

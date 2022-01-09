@@ -14,4 +14,15 @@
     <string name="title_beer_detail">Bier Informatie</string>
     <string name="description_detail">Beschrijving</string>
     <string name="i_drank_this">Ik heb dit gedroken</string>
+    <string name="succes">Het bier is toegevoegd aan jouw collectie</string>
+    <string name="failed">Het bier is niet toegevoed kunnen worden</string>
+    <string name="addBeer">Voeg Toe</string>
+    <string name="comment_detail">Bevinding</string>
+    <string name="image_of_beer">Afbeelding van het bier</string>
+    <string name="failedBeerGet">Kon geen bieren uit de database halen</string>
+    <string name="allready">"Het bier zit al in de collectie"</string>
+    <string name="fragtitleList">lijst van gedronken bieren</string>
+    <string name="fragTitleDetail">Gedronken bier detail</string>
+    <string name="your_beer_list">Uw bier lijst</string>
+    <string name="back">Terug</string>
 </resources>

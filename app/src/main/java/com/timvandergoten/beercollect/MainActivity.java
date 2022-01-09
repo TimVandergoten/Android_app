@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 Context context = searchView.getContext();
                 Intent intent = new Intent(context, FoundBeerActivity.class);
+                //TODO: check query string for spaces need to replace them with "_"
                 intent.putExtra(FoundBeerActivity.BEER, query);
                 context.startActivity(intent);
                 return false;

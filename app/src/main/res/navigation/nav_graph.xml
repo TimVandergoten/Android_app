@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/likedBeersFragment">
+
+    <fragment
+        android:id="@+id/likedBeersFragment"
+        android:name="com.timvandergoten.beercollect.LikedBeersFragment"
+        android:label="fragment_liked_beers"
+        tools:layout="@layout/fragment_liked_beers" >
+        <action
+            android:id="@+id/action_likedBeersFragment_to_likedBeerDetailFragment"
+            app:destination="@id/likedBeerDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/likedBeerDetailFragment"
+        android:name="com.timvandergoten.beercollect.LikedBeerDetailFragment"
+        android:label="fragment_liked_beer_detail"
+        tools:layout="@layout/fragment_liked_beer_detail" >
+        <action
+            android:id="@+id/action_likedBeerDetailFragment_to_likedBeersFragment"
+            app:destination="@id/likedBeersFragment" />
+    </fragment>
+</navigation>

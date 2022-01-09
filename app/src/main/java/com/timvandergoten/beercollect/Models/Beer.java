@@ -1,21 +1,55 @@
 package com.timvandergoten.beercollect.Models;
 
-public class Beer {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.room.Entity;
+
+import java.util.Objects;
+public class Beer implements Parcelable {
     public Beer() {
     }
+
+    private int beerId;
     private String name;
     private String tagline;
-    private String firstBrewed;
     private String description;
     private String imageUrl;
 
-    public Beer(String name, String tagLine, String firstBrewed, String description, String imageUrl) {
+    public Beer(int beerID,String name, String tagLine, String description, String imageUrl) {
+        this.beerId = beerID;
         this.name = name;
         this.tagline = tagLine;
-        this.firstBrewed = firstBrewed;
         this.description = description;
         this.imageUrl = imageUrl;
     }
+
+    public int getBeerId() {
+        return beerId;
+    }
+
+    public void setBeerId(int beerId) {
+        this.beerId = beerId;
+    }
+
+    protected Beer(Parcel in) {
+        name = in.readString();
+        tagline = in.readString();
+        description = in.readString();
+        imageUrl = in.readString();
+    }
+
+    public static final Creator<Beer> CREATOR = new Creator<Beer>() {
+        @Override
+        public Beer createFromParcel(Parcel in) {
+            return new Beer(in);
+        }
+
+        @Override
+        public Beer[] newArray(int size) {
+            return new Beer[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -33,14 +67,6 @@ public class Beer {
         this.tagline = tagline;
     }
 
-    public String getFirstBrewed() {
-        return firstBrewed;
-    }
-
-    public void setFirstBrewed(String firstBrewed) {
-        this.firstBrewed = firstBrewed;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -55,5 +81,18 @@ public class Beer {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(tagline);
+        parcel.writeString(description);
+        parcel.writeString(imageUrl);
     }
 }
