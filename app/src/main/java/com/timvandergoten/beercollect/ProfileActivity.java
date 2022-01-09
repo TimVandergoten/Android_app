@@ -2,17 +2,13 @@ package com.timvandergoten.beercollect;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-
-import com.timvandergoten.beercollect.Adapters.SectionStatePagerAdapter;
 
 public class ProfileActivity extends AppCompatActivity {
     Fragment LikedBeers;

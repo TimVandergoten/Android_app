@@ -30,7 +30,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-//TODO:make listitem clickable
 public class FoundBeerActivity extends AppCompatActivity{
     public static final String BEER = "beerName";
     Toolbar toolbar;

@@ -4,13 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,9 +33,10 @@ public class DetailBeerActivity extends AppCompatActivity {
     TextView name;
     TextView tagLine;
     TextView desc;
-    TextView comment;
+    EditText comment;
     Button addBtn;
     ImageView background;
+    Context context;
     ArrayList<LikedBeer> likedBeers;
 
     @Override
@@ -53,11 +57,12 @@ public class DetailBeerActivity extends AppCompatActivity {
         Picasso.get().load(beer.getImageUrl()).into(background);
         comment = findViewById(R.id.FoundBeerComment);
         addBtn = findViewById(R.id.addBeerBtn);
+        context = this;
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LikedBeer newLikedbeer = new LikedBeer(beer.getBeerId(), beer.getName(),beer.getTagline(),beer.getDescription(),beer.getImageUrl(), (String) comment.getText());
-                if (DatabaseHelper.getInstance(DetailBeerActivity.this).likedBeerDao().loadByBeerId(beer.getBeerId()).isEmpty()) {
+                LikedBeer newLikedbeer = new LikedBeer(beer.getBeerId(), beer.getName(),beer.getTagline(),beer.getDescription(),beer.getImageUrl(), comment.getText().toString());
+                if (DatabaseHelper.getInstance(context).likedBeerDao().findByName(beer.getName())==null) {
                     AddBeer(newLikedbeer);
                     Toast.makeText(DetailBeerActivity.this,R.string.succes,Toast.LENGTH_SHORT).show();
                 }else {

@@ -1,12 +1,13 @@
 package com.timvandergoten.beercollect.Models;
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
-public class LikedBeer extends Beer{
+public class LikedBeer extends Beer implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
@@ -32,4 +33,23 @@ public class LikedBeer extends Beer{
         this.comment = comment;
     }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(super.getName());
+        parcel.writeString(super.getTagline());
+        parcel.writeString(super.getDescription());
+        parcel.writeString(super.getImageUrl());
+        parcel.writeString(comment);
+    }
+    public static final Creator<LikedBeer> CREATOR = new Creator<LikedBeer>() {
+        @Override
+        public LikedBeer createFromParcel(Parcel in) {
+            return new LikedBeer(in);
+        }
+
+        @Override
+        public LikedBeer[] newArray(int size) {
+            return new LikedBeer[size];
+        }
+    };
 }
